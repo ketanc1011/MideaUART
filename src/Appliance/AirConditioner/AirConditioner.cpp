@@ -135,8 +135,8 @@ void AirConditioner::m_getPowerUsage() {
       const auto status = data.to<StatusData>();
       if (!status.hasPowerInfo())
         return ResponseStatus::RESPONSE_WRONG;
-     const float usage = status.getPowerUsage(this->m_powerFormat);
-     if (this->m_powerUsage != usage) {
+      const float usage = status.getPowerUsage(this->m_powerFormat);
+      if (this->m_powerUsage != usage) {
         this->m_powerUsage = usage;
         this->sendUpdate();
       }
